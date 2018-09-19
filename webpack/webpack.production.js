@@ -4,9 +4,12 @@ const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const production = {
+  externals: {
+    jquery: 'jQuery'
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      template: 'index_prod.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true,
